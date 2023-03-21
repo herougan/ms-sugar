@@ -1,0 +1,360 @@
+.main-stat-container {
+	position: relative;
+	left: 50px;
+	top: 50px;
+
+	.stat-window-img {
+		position: absolute;
+		left: 0px;
+		top: 0px;	
+	}
+	
+	.name {
+		position: absolute;
+		left: 75px;
+		top: 32px;
+	}
+	.job {
+		position: absolute;
+		left: 75px;
+		top: 50px;
+	}
+	.guild {
+		position: absolute;
+		left: 75px;
+		top: 68px;
+	}
+	.fame {
+		position: absolute;
+		left: 75px;
+		top: 86px;
+	}
+	.att_low {
+		position: absolute;
+		left: 75px;
+		top: 105px;
+	}
+	.att_high {
+		position: absolute;
+		left: 75px;
+		top: 122px;
+	}
+	.stat_hp {
+		position: absolute;
+		left: 75px;
+		top: 140px;
+	}
+	.stat_mp {
+		position: absolute;
+		left: 75px;
+		top: 157px;
+	}
+	.stat_r {
+		position: absolute;
+		left: 70px;
+		top: 198px;
+		font-size: 11px;
+	}
+	.stat_str {
+		position: absolute;
+		left: 75px;
+		top: 227px;
+	}
+	.stat_dex {
+		position: absolute;
+		left: 75px;
+		top: 245px;
+	}
+	.stat_int {
+		position: absolute;
+		left: 75px;
+		top: 263px;
+	}
+	.stat_luk {
+		position: absolute;
+		left: 75px;
+		top: 281px;
+	}
+}
+
+.aux-stat-container {
+	position: relative;
+	left: 260px;
+	top: 50px;
+
+	.aux-stat-img {
+		position: absolute;
+		left: 0px;
+		top: 0px;	
+	}
+	
+	.att_low {
+		position: absolute;
+		left: 75px;
+		top: 44px;
+	}
+	.att_high {
+		position: absolute;
+		left: 75px;
+		top: 62px;
+	}
+	.damage {
+		position: absolute;
+		left: 75px;
+		top: 80px;
+	}
+	.boss_damage {
+		position: absolute;
+		left: 188px;
+		top: 80px;
+	}
+	.final_damage {
+		position: absolute;
+		left: 75px;
+		top: 98px;
+	}
+	.buff_duration {
+		position: absolute;
+		left: 188px;
+		top: 98px;
+	}
+	.ignore_def {
+		position: absolute;
+		left: 75px;
+		top: 116px;
+	}
+	.item_drop_rate {
+		position: absolute;
+		left: 188px;
+		top: 116px;
+	}
+	.meso_drop_rate {
+		position: absolute;
+		left: 188px;
+		top: 133px;
+		font-size: 11px;
+	}
+	.crit_rate {
+		position: absolute;
+		left: 75px;
+		top: 227px;
+	}
+	.crit_damage {
+		position: absolute;
+		left: 75px;
+		top: 245px;
+	}
+	.status_res {
+		position: absolute;
+		left: 75px;
+		top: 263px;
+	}
+	.stance {
+		position: absolute;
+		left: 188px;
+		top: 169px;
+	}
+}
+
+.equip-grid-container {
+	position: relative;
+	left: 500px;
+	top: 39px;
+	
+	.equip-grid-img {
+		position: absolute;
+		left: 0px;
+		top: 0px;	
+	}
+
+	.ring1 {
+		position: absolute;
+		left: 16px;
+		top: 53px;
+	}
+	.ring2 {
+		position: absolute;
+		left: 16px;
+		top: 93px;
+	}
+	.ring3 {
+		position: absolute;
+		left: 16px;
+		top: 134px;
+	}
+	.ring4 {
+		position: absolute;
+		left: 16px;
+		top: 175px;
+	}
+	.pocket {
+		position: absolute;
+		left: 16px;
+		top: 218px;
+	}
+	.pendant1 {
+		position: absolute;
+		left: 59px;
+		top: 93px;
+	}
+	.pendant2 {
+		position: absolute;
+		left: 59px;
+		top: 134px;
+	}
+	.belt {
+		position: absolute;
+		left: 59px;
+		top: 218px;
+	}
+
+	.weapon {
+		position: absolute;
+		left: 59px;
+		top: 175px;
+	}
+	.extra_acc1 {
+		position: absolute;
+		left: 59px;
+		top: 53px;
+	}
+	.extra_acc2 {
+		position: absolute;
+		left: 143px;
+		top: 53px;
+	}
+	.book {
+		position: absolute;
+		left: 18px;
+		top: 258px;
+	}
+
+	.hat {
+		position: absolute;
+		left: 99px;
+		top: 53px;
+	}
+	.face_acc {
+		position: absolute;
+		left: 99px;
+		top: 93px;
+	}
+	.eye_acc {
+		position: absolute;
+		left: 99px;
+		top: 134px;
+	}
+	.top {
+		position: absolute;
+		left: 99px;
+		top: 175px;
+	}
+	.bottom {
+		position: absolute;
+		left: 99px;
+		top: 218px;
+	}
+	.overalls {
+		position: absolute;
+		left: 99px;
+		top: 175px;
+	}
+	.shoes {
+		position: absolute;
+		left: 99px;
+		top: 258px;
+	}
+	.earrings1 {
+		position: absolute;
+		left: 143px;
+		top: 134px;
+	}
+
+	.shoulder {
+		position: absolute;
+		left: 143px;
+		top: 175px;
+	}
+	.gloves {
+		position: absolute;
+		left: 143px;
+		top: 218px;
+	}
+	.android {
+		position: absolute;
+		left: 143px;
+		top: 258px;
+	}
+	.android_heart {
+		position: absolute;
+		left: 184px;
+		top: 258px;
+	}
+
+	.emblem {
+		position: absolute;
+		left: 182px;
+		top: 53px;
+	}
+	.badge {
+		position: absolute;
+		left: 182px;
+		top: 93px;
+	}
+	.medal {
+		position: absolute;
+		left: 182px;
+		top: 134px;
+	}
+	.secondary_weapon {
+		position: absolute;
+		left: 182px;
+		top: 175px;
+	}
+	.cape {
+		position: absolute;
+		left: 182px;
+		top: 218px;
+	}
+}
+
+* {
+
+	font-size: 10px;
+	font-family: arial;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	//
+	cursor: url(../../../assets/static/cursor/maple_arrow.cur), auto;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+	.eqp-icon img:hover {
+		cursor: url(../../../assets/static/cursor/maple_helpsel.cur), help;
+		background-color: blue;
+	}
+	.eqp-icon img:active {
+		cursor: url(../../../assets/static/cursor/maple_move.cur), all-scroll;
+	}
+}
+
+.inventory-window {
+	position: relative;
+	left: 800;
+	top: 400px;
+
+	.inv-mesos {
+		position: absolute;
+		// background-color: red;
+		width: 42px;
+		height: 18px;
+		left: 8px;
+		top: 389px;
+
+		&:hover {
+			// background-color: blue;
+
+		}
+	}
+}

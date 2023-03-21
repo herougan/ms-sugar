@@ -1,1 +1,175 @@
+<div>
 <p>tableau works!</p>
+<div class="main-stat-container">
+	<picture>
+		<source srcset="../assets/static/base/main_stat_window.png">
+		<img class="stat-window-img" src="../assets/static/base/main_stat_window.png">
+	</picture>
+
+	<a class="name">Omnibaal</a>
+	<a class="job">Demon Avenger</a>
+	<a class="guild">Nebulous</a>
+	<a class="fame">166</a>
+	<a class="att_low">31M 141K 542</a>
+	<a class="att_high">~ 34M 221K 473</a>
+	<a class="stat_hp">500000/500000</a>
+	<a class="stat_mp">500000/500000</a>
+	<a class="stat_r">0</a>
+	<a class="stat_str">4233 (4+4229)</a>
+	<a class="stat_dex">3845 (4+3842)</a>
+	<a class="stat_int">2570 (4+2566)</a>
+	<a class="stat_luk">2287 (4+2283)</a>
+</div>
+
+<!-- FUTURE: NOTE: This stat window is for the FULL maple.
+The TTRPG will not use so many stats (and at the same time will
+use many more. New stat details has to be built.)-->
+<div class="aux-stat-container">
+	<picture>
+		<source srcset="../assets/static/base/aux_stat_window.png">
+		<img class="aux-stat-img" src="../assets/static/base/aux_stat_window.png">
+	</picture>
+
+	<a class="att_low">40M 000K 000</a>
+	<a class="att_high">~ 50M 000K 000</a>
+	<a class="damage">106%</a>
+	<a class="boss_damage">200%</a>
+	<a class="final_damage">50%</a>
+	<a class="buff_duration">30%</a>
+	<a class="ignore_def">98.5%</a>
+	<a class="item_drop_rate">3%</a>
+	<a class="meso_drop_rate">0%</a>
+	<a class="critical_rate">99%</a>
+	<a class="crit_damage">58%</a>
+	<a class="status_res">30%</a>
+	<a class="stance">100%</a>
+	<a class="def">554</a>
+	<a class="speed">150</a>
+	<a class="att_speed">Fast</a>
+	<a class="jump">200</a>
+	<a class="star_force">2000</a>
+	<a class="arcane_force">2000</a>
+	<a class="authentic_force">2000</a>
+
+</div>
+
+<div class="equip-grid-container" 
+(drop)="drop($event)" (dragover)="allowDrop($event)">
+	<picture>
+		<source srcset="../assets/static/base/equip_window.png">
+		<img class="equip-grid-img" src="../assets/static/base/equip_window.png">
+	</picture>
+
+	<div class="eqp-icon ring1" [draggable]="true" (dragstart)="drag($event)">
+		<img src="../assets/static/equipment/Endless_Terror.png">
+	</div>
+	<div class="eqp-icon ring2">
+		<img src="../assets/static/equipment/Noble_Ifia's_Ring.png">
+	</div>
+	<div class="eqp-icon ring3">
+		<img src="../assets/static/equipment/Silver_Blossom_Ring.png">
+	</div>
+	<div class="eqp-icon ring4">
+		<img src="../assets/static/equipment/Guardian_Angel_Ring.png">
+	</div>
+	<div class="eqp-icon pocket">
+		<img src="../assets/static/equipment/Pink_Holy_Cup.png">
+	</div>
+
+	<div class="eqp-icon pendant1">
+		<img src="../assets/static/equipment/Dominator_Pendant.png">
+	</div>
+	<div class="eqp-icon pendant2">
+		<img src="../assets/static/equipment/Daybreak_Pendant.png">
+	</div>
+	<div class="eqp-icon earrings1">
+		<img src="../assets/static/equipment/Estella_Earrings.png">
+	</div>
+	<div class="eqp-icon face_acc">
+		<img src="../assets/static/equipment/Berserked.png">
+	</div>
+	<div class="eqp-icon eye_acc">
+		<img src="../assets/static/equipment/Magic_Eyepatch.png">
+	</div>
+	<div class="eqp-icon belt">
+		<img src="../assets/static/equipment/Tyrant_Belt.png">
+	</div>
+
+	<div class="eqp-icon shoulder">
+		<img src="../assets/static/equipment/Arcane_Umbra_Knight_Shoulder.png">
+	</div>
+	<div class="eqp-icon weapon">
+		<img src="../assets/static/equipment/Arcane_Umbra_Two-Handed_Hammer.png">
+	</div>
+	<div class="eqp-icon hat">
+		<img src="../assets/static/equipment/Arcane_Umbra_Knight_Hat.png">
+	</div>
+	<div class="eqp-icon top">
+		<img src="../assets/static/equipment/Eternal_Knight_Armor.png">
+	</div>
+	<div class="eqp-icon bottom">
+		<img src="../assets/static/equipment/Eternal_Knight_Pants.png">
+	</div>
+	<div class="eqp-icon overalls">
+		<img src="../assets/static/equipment/Arcane_Umbra_Knight_Suit.png">
+	</div>
+	<div class="eqp-icon gloves">
+		<img src="../assets/static/equipment/Arcane_Umbra_Knight_Gloves.png">
+	</div>
+	<div class="eqp-icon shoes">
+		<img src="../assets/static/equipment/Arcane_Umbra_Knight_Shoes.png">
+	</div>
+	<div class="eqp-icon cape">
+		<img src="../assets/static/equipment/Arcane_Umbra_Knight_Cape.png">
+	</div>
+
+	<div class="eqp-icon secondary_weapon">
+		<img src="../assets/static/equipment/Arcane_Umbra_Knight_Gloves.png">
+	</div>
+
+	
+	<div class="eqp-icon emblem">
+		<img src="../assets/static/equipment/Mitra's_Rage_Warrior.png">
+	</div>
+	<div class="eqp-icon badge">
+		<img src="../assets/static/equipment/Genesis_Badge.png">
+	</div>
+	<div class="eqp-icon medal">
+		<img src="../assets/static/equipment/Seven_Day_Monster_Parker.png">
+	</div>
+
+	
+	<div class="eqp-icon android">
+		<img src="../assets/static/equipment/Battle-Roid.png">
+	</div>
+	<div class="eqp-icon android_heart">
+		<img src="../assets/static/equipment/Outlaw_Heart.png">
+	</div>
+	<div class="eqp-icon book">
+		<img src="../assets/static/equipment/Frenzy_Totem.png">
+	</div>
+	
+	<div class="eqp-icon extra_acc1">
+		<img src="../assets/static/equipment/Meister_Earring.png">
+	</div>
+	<div class="eqp-icon extra_acc2" [draggable]="true" (dragstart)="drag($event)">
+		<img src="../assets/static/equipment/Scarlet_Ring.png">
+	</div>
+</div>
+
+<button class="btn btn-primary">Test</button>
+
+
+<div class="inventory-window" 
+(drop)="drop($event)" (dragover)="allowDrop($event)">
+	<picture>
+		<source srcset="../assets/static/base/inventory_window.png">
+		<img class="equip-grid-img" src="../assets/static/base/inventory_window.png">
+	</picture>
+
+	<div class="inv-mesos">
+
+	</div>
+</div>
+
+</div>
