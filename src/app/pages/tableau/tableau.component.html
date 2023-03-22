@@ -38,8 +38,8 @@ use many more. New stat details has to be built.)-->
 	<a class="buff_duration">30%</a>
 	<a class="ignore_def">98.5%</a>
 	<a class="item_drop_rate">3%</a>
-	<a class="meso_drop_rate">0%</a>
-	<a class="critical_rate">99%</a>
+	<a class="meso_drop_rate">2%</a>
+	<a class="crit_rate">99%</a>
 	<a class="crit_damage">58%</a>
 	<a class="status_res">30%</a>
 	<a class="stance">100%</a>
@@ -160,14 +160,22 @@ use many more. New stat details has to be built.)-->
 <button class="btn btn-primary">Test</button>
 
 
-<div class="inventory-window" 
+<div class="inventory-window" id="inventory"
 (drop)="drop($event)" (dragover)="allowDrop($event)">
 	<picture>
 		<source srcset="../assets/static/base/inventory_window.png">
 		<img class="equip-grid-img" src="../assets/static/base/inventory_window.png">
 	</picture>
 
-	<div class="inv-mesos">
+	<div class="inventory-mesos">
+
+	</div>
+
+	<div class="inventory-points">
+
+	</div>
+
+	<div class="inventory-slot">
 
 	</div>
 </div>

@@ -137,22 +137,57 @@
 	.crit_rate {
 		position: absolute;
 		left: 75px;
-		top: 227px;
+		top: 133px;
 	}
 	.crit_damage {
 		position: absolute;
 		left: 75px;
-		top: 245px;
+		top: 152px;
 	}
 	.status_res {
 		position: absolute;
 		left: 75px;
-		top: 263px;
+		top: 169px;
 	}
 	.stance {
 		position: absolute;
 		left: 188px;
 		top: 169px;
+	}
+	.def {
+		position: absolute;
+		left: 75px;
+		top: 188px;
+	}
+	.speed {
+		position: absolute;
+		left: 75px;
+		top: 207px;
+	}
+	.att_speed {
+		position: absolute;
+		left: 188px;
+		top: 152px;
+	}
+	.jump {
+		position: absolute;
+		left: 75px;
+		top: 224px;
+	}
+	.star_force {
+		position: absolute;
+		left: 188px;
+		top: 188px;
+	}
+	.arcane_force {
+		position: absolute;
+		left: 188px;
+		top: 207px;
+	}
+	.authentic_force {
+		position: absolute;
+		left: 188px;
+		top: 224px;
 	}
 }
 
@@ -342,15 +377,36 @@
 .inventory-window {
 	position: relative;
 	left: 800;
-	top: 400px;
+	top: 450px;
 
-	.inv-mesos {
+	.inventory-slot {
+		background-color: cyan;
+		position:absolute;
+		&:hover {
+			background-color: blue;
+		}
+	}
+
+	.inventory-mesos {
 		position: absolute;
 		// background-color: red;
 		width: 42px;
-		height: 18px;
+		height: 16px;
 		left: 8px;
-		top: 389px;
+		top: 391px;
+
+		&:hover {
+			// background-color: blue;
+
+		}
+	}
+
+	.inventory-points {
+		position: absolute;
+		width: 82px;
+		height: 16px;
+		left: 229px;
+		top: 391px;
 
 		&:hover {
 			// background-color: blue;
