@@ -159,7 +159,6 @@ use many more. New stat details has to be built.)-->
 
 <button class="btn btn-primary">Test</button>
 
-
 <div class="inventory-window" id="inventory"
 (drop)="drop($event)" (dragover)="allowDrop($event)">
 	<picture>
@@ -177,6 +176,21 @@ use many more. New stat details has to be built.)-->
 
 	<div class="inventory-slot">
 
+	</div>
+</div>
+
+<div class="tooltip mx-2 my-2" id="item-tooltip" [ngClass]="{'tooltip-active': tooltipActive}">
+	<div class="tooltip-content mx-2 my-2">
+		<h1>
+			HAHAH
+		</h1>
+		<div class="stars row"> <!-- first row (15) -->
+	
+		</div>
+		<div class="stars"> <!-- second row (10)-->
+	
+		</div>
+		<a></a>
 	</div>
 </div>
 

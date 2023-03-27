@@ -6,4 +6,18 @@ import { Injectable } from '@angular/core';
 export class EquipmentService {
 
   constructor() { }
+
+  swapEquipment(): void {
+
+  }
+
+  equip(): void {
+
+  }
+
+  unequip(): void {
+    
+  }
 }
+
+// DOWNLOAD NGRX!

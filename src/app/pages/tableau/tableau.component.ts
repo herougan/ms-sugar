@@ -10,6 +10,7 @@ import { EmptyEquipment, Equipment } from 'src/app/equipment/equipment';
 
 export class TableauComponent implements OnInit {
 
+  //#region Defn
   /*
     Ground Objects
   */
@@ -52,7 +53,9 @@ export class TableauComponent implements OnInit {
   pendant1: Equipment;
   pendant2: Equipment;
 
-  equipment: Equipment[] = []; // Holds all the above items in an easy to access list
+  inv_x: number = 16;
+  inv_y: number = 8;
+  equipment: Equipment[][]; // Holds all the above items in an easy to access list
 
   constructor(private renderer: Renderer2, private el: ElementRef) {
     this.ring1 = EmptyEquipment();
@@ -91,18 +94,34 @@ export class TableauComponent implements OnInit {
 
     this.pendant1 = EmptyEquipment();
     this.pendant2 = EmptyEquipment();
+
+    this.equipment = [];
+    for (let i = 0; i < this.inv_x; i++) {
+      this.equipment[i] = [];
+      for (let u = 0; u < this.inv_y; u++) {
+        this.equipment[i][u] = EmptyEquipment();
+      }
+    }
   }
 
   ngOnInit(): void {
-    this.applyCursor(".btn", "http://localhost:4200/assets/static/cursor/maple_link.ani");
-    this.applyCursor('.inventory-mesos',  "http://localhost:4200/assets/static/cursor/aero_working.ani")
-    this.applyCursor('.inventory-points',  "http://localhost:4200/assets/static/cursor/aero_working.ani")
+    this.applyCursor(".btn",                "http://localhost:4200/assets/static/cursor/maple_link.ani");
+    this.applyCursor('.inventory-mesos',    "http://localhost:4200/assets/static/cursor/aero_working.ani")
+    this.applyCursor('.inventory-points',   "http://localhost:4200/assets/static/cursor/aero_working.ani")
 
-    this.equipment.length = 20;
-    this.equipment[0] = this.ring1;
+    // this.equipment.length = 20;
+    // this.equipment[0][0] = this.ring1;
     
     this.createInventorySlotDivs(/*renderer *//*, elemRef */);
+    this.tooltip = document.querySelector('#item-tooltip')!;   
   }
+
+  //#endregion Defn
+
+  //#region UI Elements
+  
+  tooltip!: HTMLElement;
+  tooltip_offset: number = 19;
 
   async applyCursor(selector: string, aniUrl: string) {
 
@@ -115,6 +134,10 @@ export class TableauComponent implements OnInit {
     document.head.appendChild(style);
   }
 
+  dragOnto(): void {
+    
+  }
+
   width: number = 34;
   height: number = 34;
   margin_x: number = 8;
@@ -123,7 +146,8 @@ export class TableauComponent implements OnInit {
   slots_y: number = 8;
   offset_x: number = 13;
   offset_y: number = 54;
-  createInventorySlotDivs(/*renderer: Renderer2 *//*, elemRef: ElementRef*/): void {
+  //
+  createInventorySlotDivs(): void {
     let inventory = document!.getElementById('inventory') as HTMLElement;
 
     for (let i = 0; i < this.slots_x; i++) {
@@ -135,16 +159,52 @@ export class TableauComponent implements OnInit {
         _div.style.top = (this.height + this.margin_y) * u + this.offset_y + "px";
         _div.style.width = this.width + "px";
         _div.style.height = this.height + "px";
-        // _div.style.position = "absolute";
-        // _div.style.backgroundColor = "red";
-        
-        // inventory.appendChild(_div);
-
+        //
+        this.renderer.listen(_div, 'mousemove', (event: MouseEvent) => {
+          console.log("E(" + event.x + ", " + event.y + "), Page(" + event.pageX + ", " + event.pageY + ")");
+          this.tooltip.style.left = event.pageX + "px";
+          this.tooltip.style.bottom = window.innerHeight - this.tooltip_offset - event.pageY + "px";
+          //
+          this.tooltipActive = true;
+        });
+        this.renderer.listen(_div, 'mouseout', (event: MouseEvent) => {
+          this.tooltipActive = false;
+        });
+        //
         this.renderer.appendChild(inventory, _div);
-        // this.renderer.appendChild(this.el.nativeElement, _div);
       }
     }
   }
+
+  //#endregion UI Elements
+
+  //#region tooltip
+
+  tooltipActive: boolean = false;
+  hoverDivs() {
+
+  }
+
+  hoverDiv(id: number) {
+
+  }
+
+  getIdFromPos() {
+    
+  }
+
+  generateText(eq: Equipment): void {
+
+  }
+
+  craftTooltip(event: any): void {
+    
+
+
+    return;
+  }
+
+  //#endregion Equipment
 
   //#region Equipment
 
@@ -166,14 +226,5 @@ export class TableauComponent implements OnInit {
     // event.target.style.cursor = 'moving';
   }
 
-  craftTooltip(event: any): void {
-    
-
-
-    return;
-  }
-
   //#endregion
-
-
 }
