@@ -413,9 +413,13 @@
 	.eqp-icon img:active {
 		cursor: url(../../../assets/static/cursor/maple_move.cur), all-scroll;
 	}
+	a {
+		color: black;
+		text-decoration: none;
+	}
 }
 
-.tooltip {
+.tooltip-container {
 	position: absolute;
 	background-color: rgb(0, 0, 0, 0.8);
 	pointer-events: none;

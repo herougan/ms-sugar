@@ -121,7 +121,7 @@ export class TableauComponent implements OnInit {
   //#region UI Elements
   
   tooltip!: HTMLElement;
-  tooltip_offset: number = 19;
+  tooltip_offsetY: number = 8;
 
   async applyCursor(selector: string, aniUrl: string) {
 
@@ -162,8 +162,9 @@ export class TableauComponent implements OnInit {
         //
         this.renderer.listen(_div, 'mousemove', (event: MouseEvent) => {
           console.log("E(" + event.x + ", " + event.y + "), Page(" + event.pageX + ", " + event.pageY + ")");
-          this.tooltip.style.left = event.pageX + "px";
-          this.tooltip.style.bottom = window.innerHeight - this.tooltip_offset - event.pageY + "px";
+          this.tooltip.style.left = event.pageX - this.tooltip.offsetWidth / 2 + "px";
+          // this.tooltip.style.bottom = window.innerHeight - event.pageY - this.tooltip.offsetHeight + "px";
+          this.tooltip.style.top = event.pageY - this.tooltip.offsetHeight - this.tooltip_offsetY + "px";
           //
           this.tooltipActive = true;
         });
