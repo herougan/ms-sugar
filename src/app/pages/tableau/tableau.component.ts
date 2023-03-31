@@ -119,9 +119,6 @@ export class TableauComponent implements OnInit {
   //#endregion Defn
 
   //#region UI Elements
-  
-  tooltip!: HTMLElement;
-  tooltip_offsetY: number = 8;
 
   async applyCursor(selector: string, aniUrl: string) {
 
@@ -181,7 +178,13 @@ export class TableauComponent implements OnInit {
 
   //#region tooltip
 
+  
+  tooltip!: HTMLElement;
+  tooltip_offsetY: number = 8;
   tooltipActive: boolean = false;
+  //
+  currEquipment: Equipment = EmptyEquipment(); // TODO only rerender if equipment id changes.
+
   hoverDivs() {
 
   }
@@ -190,8 +193,8 @@ export class TableauComponent implements OnInit {
 
   }
 
-  getIdFromPos() {
-    
+  getIdFromPos(x: number, y: number) {
+    return x/(10+10) * 16 + y/(10+10);
   }
 
   generateText(eq: Equipment): void {
@@ -203,6 +206,11 @@ export class TableauComponent implements OnInit {
 
 
     return;
+  }
+
+  selectEquipment(eq: Equipment): void {
+    if (eq.desc = "-1") {} // If null
+    this.currEquipment = eq;
   }
 
   //#endregion Equipment

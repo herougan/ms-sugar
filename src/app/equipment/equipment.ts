@@ -64,6 +64,19 @@ export class Equipment {
 
 	/* SpellTrace/Scrolling */
 	scrollScore: ScrollScore = EmptyScroll();
+
+	statsToString(): string {
+		return "Stats"; // scroll score, flame score, stat score
+	}
+
+	potentialsToString(): string {
+		return "Potentials";
+	}
+
+	setBonusToString(): string {
+		
+	}
+
 }
 
 export function EmptyEquipment() {
