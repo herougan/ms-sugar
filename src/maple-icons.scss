@@ -1,0 +1,92 @@
+.icon-ms-flame {
+	
+    background-image: url("/assets/static/base/icons/flame_dot.png");
+    background-position: center center;
+	height: 16px;
+	width: 16px;
+    background-repeat: no-repeat;
+    display: inline-block;
+
+	&.grey {
+
+		background-color: grey;
+
+	}
+}
+
+.icon-ms-potential {
+	
+    background-image: url("/assets/static/base/icons/rare_rarity_icon.png");
+    background-position: center center;
+	height: 16px;
+	width: 16px;
+    background-repeat: no-repeat;
+    display: inline-block;
+
+	&.rare {
+		background-image: url("/assets/static/base/icons/rare_rarity_icon.png");
+	}
+	&.epic {
+		background-image: url("/assets/static/base/icons/epic_rarity_icon.png");
+	}
+	&.unique {
+		background-image: url("/assets/static/base/icons/unique_rarity_icon.png");
+	}
+	&.legendary {
+		background-image: url("/assets/static/base/icons/legendary_rarity_icon.png");
+	}
+}
+
+.icon-ms-special {
+	
+    background-image: url("/assets/static/base/icons/mdef_up_icon.png");
+    background-position: center center;
+	height: 16px;
+	width: 16px;
+    background-repeat: no-repeat;
+    display: inline-block;
+
+	&.mdef {
+
+		background-image: url("/assets/static/base/icons/mdef_up_icon.png");
+
+	}
+
+	&.def {
+
+		background-image: url("/assets/static/base/icons/def_up_icon.png");
+
+	}
+
+	&.ied {
+
+		background-image: url("/assets/static/base/icons/ignore_defence_icon.png");
+
+	}
+
+	&.bd {
+
+		background-image: url("/assets/static/base/icons/boss_dmg_icon.png");
+
+	}
+}
+
+.icon-ms-star {
+
+    background-image: url("/assets/static/base/icons/starforce.png");
+    background-position: center center;
+	height: 16px;
+	width: 16px;
+    background-repeat: no-repeat;
+    display: inline-block;
+
+	padding: 0px;
+
+	&.filled {
+		background-image: url("/assets/static/base/icons/starforce_full.png");
+	}
+
+	&.unfilled {
+    background-image: url("/assets/static/base/icons/starforce.png");
+	}
+}

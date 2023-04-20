@@ -5,7 +5,7 @@ import { EmptyEquipment, Equipment } from 'src/app/equipment/equipment';
 @Component({
   selector: 'app-tableau',
   templateUrl: './tableau.component.html',
-  styleUrls: ['./tableau.component.scss']
+styleUrls: ['./tableau.component.scss' /*, '../../../maple-icons.scss' */]
 })
 
 export class TableauComponent implements OnInit {

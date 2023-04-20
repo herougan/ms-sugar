@@ -9,6 +9,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { SkillSettingsComponent } from './pages/skill-settings/skill-settings.component';
 import { AttackSettingsComponent } from './pages/attack-settings/attack-settings.component';
 import { MarketComponent } from './market/market.component';
+import { InnerAbilityComponent } from './inner-ability/inner-ability.component';
+import { VMatrixComponent } from './vmatrix/vmatrix.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { MarketComponent } from './market/market.component';
     HomeComponent,
     MarketComponent,
     SkillSettingsComponent,
-    AttackSettingsComponent
+    AttackSettingsComponent,
+    InnerAbilityComponent,
+    VMatrixComponent
   ],
   imports: [
     BrowserModule,

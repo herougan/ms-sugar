@@ -74,7 +74,7 @@ export class Equipment {
 	}
 
 	setBonusToString(): string {
-		
+		return "Bonus";
 	}
 
 }

@@ -2,6 +2,9 @@
 	position: relative;
 	left: 50px;
 	top: 50px;
+	img {
+		max-width: none;
+	}
 
 	.stat-window-img {
 		position: absolute;
@@ -81,6 +84,9 @@
 	position: relative;
 	left: 260px;
 	top: 50px;
+	img {
+		max-width: none;
+	}
 
 	.aux-stat-img {
 		position: absolute;
@@ -195,6 +201,9 @@
 	position: relative;
 	left: 500px;
 	top: 39px;
+	img {
+		max-width: none;
+	}
 	
 	.equip-grid-img {
 		position: absolute;
@@ -357,6 +366,9 @@
 	position: relative;
 	left: 800;
 	top: 450px;
+	img {
+		max-width: none;
+	}
 
 	.inventory-slot {
 		background-color: cyan;
@@ -419,20 +431,81 @@
 	}
 }
 
+// Specific to equipment tooltip
+
 .tooltip-container {
 	position: absolute;
-	background-color: rgb(0, 0, 0, 0.8);
 	pointer-events: none;
 	display: none;
-	height: 100px;
-	border-radius: 10px;
+	height: auto;
 	color: white;
+	width: 350px;
 
 	.tooltip-content {
-		
+		background-color: rgb(0, 0, 0, 0.8);
+		border-radius: 10px;
+	}
+
+	.tooltip-setbonus {
+		background-color: rgb(0, 0, 0, 0.8);
+		border-radius: 10px;
+		display: none;
 	}
 
 	&.tooltip-active {
 		display: block;
 	}
+
+	.eq-damage-inc {
+		font-size: xx-large;
+	}
+
+	.eq-img {
+		width: 100px;
+		height: 100px;
+	}
 }
+
+
+
+// Reset
+p {
+	margin-bottom: 0px!important;
+	margin-top: 0px!important;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+* {
+	// margin: 0;
+	// padding: 0;
+	// font: inherit;
+}
+
+html {
+	color-scheme: dark light;
+}
+
+body {
+	min-height: 100vh;
+}
+
+img, picture, svg, video {
+	display: block;
+	max-width: 100%;
+}
+
+li {
+	// why are they separated?
+}
+
+// todo 1 hour concentrate on getting html right
+
+// todo 3 hours, get stats right, get all stats right
+// todo 2 hours save eq data in service and then go react
+
+// note, let's not do the char fully.
+
+// todo 5 hours, get ability to drag and drop
