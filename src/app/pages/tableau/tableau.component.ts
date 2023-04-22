@@ -1,6 +1,6 @@
 import { Component, ElementRef, Injectable, OnInit, Renderer2 } from '@angular/core';
 import { convertAniBinaryToCSS } from 'ani-cursor';
-import { EmptyEquipment, Equipment } from 'src/app/equipment/equipment';
+import { EmptyEquipment, Equipment, EquipmentType } from 'src/app/equipment/equipment';
 
 @Component({
   selector: 'app-tableau',
@@ -184,6 +184,7 @@ export class TableauComponent implements OnInit {
   tooltipActive: boolean = false;
   //
   currEquipment: Equipment = EmptyEquipment(); // TODO only rerender if equipment id changes.
+  
 
   hoverDivs() {
 

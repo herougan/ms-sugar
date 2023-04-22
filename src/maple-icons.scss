@@ -75,8 +75,9 @@
 
     background-image: url("/assets/static/base/icons/starforce.png");
     background-position: center center;
-	height: 16px;
-	width: 16px;
+	background-size: 12px;
+	height: 12px;
+	width: 12px;
     background-repeat: no-repeat;
     display: inline-block;
 
@@ -90,3 +91,17 @@
     background-image: url("/assets/static/base/icons/starforce.png");
 	}
 }
+
+.icon-ms-square {
+
+    background-image: url("/assets/static/base/icons/square_dot.png");
+    background-position: center center;
+	background-size: 4px;
+	height: 4px;
+	width: 4px;
+    background-repeat: no-repeat;
+    display: inline-block;
+
+	padding: 0px;
+}
+

@@ -213,59 +213,60 @@
 
 	.ring1 {
 		position: absolute;
-		left: 16px;
-		top: 53px;
+		left: 15px;
+		top: 51px;
 	}
 	.ring2 {
 		position: absolute;
-		left: 16px;
-		top: 93px;
+		left: 15px;
+		top: 91px;
 	}
 	.ring3 {
 		position: absolute;
-		left: 16px;
-		top: 134px;
+		left: 15px;
+		top: 132px;
 	}
 	.ring4 {
 		position: absolute;
-		left: 16px;
-		top: 175px;
+		left: 15px;
+		top: 173px;
 	}
 	.pocket {
 		position: absolute;
-		left: 16px;
-		top: 218px;
+		left: 15px;
+		top: 213px;
 	}
+
 	.pendant1 {
 		position: absolute;
-		left: 59px;
-		top: 93px;
+		left: 56px;
+		top: 91px;
 	}
 	.pendant2 {
 		position: absolute;
-		left: 59px;
-		top: 134px;
+		left: 56px;
+		top: 132px;
 	}
 	.belt {
 		position: absolute;
-		left: 59px;
-		top: 218px;
+		left: 56px;
+		top: 213px;
 	}
 
 	.weapon {
 		position: absolute;
-		left: 59px;
-		top: 175px;
+		left: 56px;
+		top: 173px;
 	}
 	.extra_acc1 {
 		position: absolute;
-		left: 59px;
-		top: 53px;
+		left: 56px;
+		top: 51px;
 	}
 	.extra_acc2 {
 		position: absolute;
-		left: 143px;
-		top: 53px;
+		left: 138px;
+		top: 51px;
 	}
 	.book {
 		position: absolute;
@@ -275,90 +276,90 @@
 
 	.hat {
 		position: absolute;
-		left: 99px;
+		left: 97px;
 		top: 53px;
 	}
 	.face_acc {
 		position: absolute;
-		left: 99px;
+		left: 97px;
 		top: 93px;
 	}
 	.eye_acc {
 		position: absolute;
-		left: 99px;
-		top: 134px;
+		left: 97px;
+		top: 132px;
 	}
 	.top {
 		position: absolute;
-		left: 99px;
-		top: 175px;
+		left: 97px;
+		top: 173px;
 	}
 	.bottom {
 		position: absolute;
-		left: 99px;
-		top: 218px;
+		left: 97px;
+		top: 213px;
 	}
 	.overalls {
 		position: absolute;
-		left: 99px;
-		top: 175px;
+		left: 97px;
+		top: 173px;
 	}
 	.shoes {
 		position: absolute;
-		left: 99px;
+		left: 97px;
 		top: 258px;
 	}
 	.earrings1 {
 		position: absolute;
-		left: 143px;
-		top: 134px;
+		left: 138px;
+		top: 132px;
 	}
 
 	.shoulder {
 		position: absolute;
-		left: 143px;
-		top: 175px;
+		left: 138px;
+		top: 173px;
 	}
 	.gloves {
 		position: absolute;
-		left: 143px;
-		top: 218px;
+		left: 138px;
+		top: 213px;
 	}
 	.android {
 		position: absolute;
-		left: 143px;
+		left: 138px;
 		top: 258px;
 	}
 	.android_heart {
 		position: absolute;
-		left: 184px;
+		left: 179px;
 		top: 258px;
 	}
 
 	.emblem {
 		position: absolute;
-		left: 182px;
-		top: 53px;
+		left: 179px;
+		top: 51px;
 	}
 	.badge {
 		position: absolute;
-		left: 182px;
-		top: 93px;
+		left: 179px;
+		top: 91px;
 	}
 	.medal {
 		position: absolute;
-		left: 182px;
-		top: 134px;
+		left: 179px;
+		top: 132px;
 	}
 	.secondary_weapon {
 		position: absolute;
-		left: 182px;
+		left: 179px;
 		top: 175px;
 	}
 	.cape {
 		position: absolute;
-		left: 182px;
-		top: 218px;
+		left: 179px;
+		top: 213px;
 	}
 }
 
@@ -376,6 +377,7 @@
 		&:hover {
 			background-color: blue;
 		}
+		border: 1px solid red;
 	}
 
 	.inventory-mesos {
@@ -431,6 +433,19 @@
 	}
 }
 
+.eqp-icon {
+	border: 1px solid red;
+	height: 38px;
+	width: 38px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	img {
+		margin: auto;
+		display: block;
+	}
+}
+
 // Specific to equipment tooltip
 
 .tooltip-container {
@@ -439,7 +454,7 @@
 	display: none;
 	height: auto;
 	color: white;
-	width: 350px;
+	width: 375px;
 
 	.tooltip-content {
 		background-color: rgb(0, 0, 0, 0.8);
@@ -464,9 +479,48 @@
 		width: 100px;
 		height: 100px;
 	}
+
+	.eq-name {
+		text-align: center;
+	}
+
+	.eq-rarity {
+		text-align: center;
+	}
+
+	.eq-tradability {
+		text-align: center;
+	}
+
+	.eq-dmg-container {
+		p {
+			font-size: 8px;
+		}
+		.eq-damage-inc-label {
+			font-size: 10px;
+			text-align: right;
+		}
+		.eq-damage-inc {
+			font-size: 35px;
+			font-weight: 600;
+		}
+		border: 5px solid red;
+	}
+
+	.eq-img-container {
+		border: 5px solid red;
+		.eq-img {
+			background-image: url("/assets/static/equipment/Black_Bean_Mark.png");
+			background-position: center center;
+			background-size: contain;
+			width: 75px;
+			height: 75px;
+			border: 5px solid blue;
+			background-repeat: no-repeat;
+			display: inline-block;
+		}
+	}
 }
-
-
 
 // Reset
 p {

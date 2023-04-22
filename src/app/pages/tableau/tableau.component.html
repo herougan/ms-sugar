@@ -181,7 +181,7 @@ use many more. New stat details has to be built.)-->
 
 <!--TODO Use {} handle-bar'd data -->
 <!-- Tooltip -->
-<div class="tooltip-container row" id="item-tooltip" [ngClass]="{'tooltip-active': tooltipActive}">
+<div class="tooltip-container row" id="item-tooltip" [ngClass]="{'tooltip-active': tooltipActive, 'empty-equipment' : !currEquipment.name }"> <!-- Number pot -->
 	<div class="col-sm tooltip-content mx-2 my-2">
 		<div class="eq-header">
 			<div class="eq-stars row justify-content-center"> <!-- first row (15) -->
@@ -217,9 +217,11 @@ use many more. New stat details has to be built.)-->
 				<i class="icon-ms-star"></i>
 			</div>
 		</div>
-		<p class="eq-name">Arcane Shade Baselard</p><p class="eq-scrolls-used">(+4)</p>
-		<p class="eq-rarity">(Legendary Item)</p><p class="eq-unicity">(Unique)</p>
-		<p class="eq-tradability">Untradable</p>
+		<div class="eq-name-header mb-5">
+			<p class="eq-name">Arcane Shade Baselard (+4)</p>
+			<p class="eq-rarity">(Legendary Item, Unique)</p>
+			<p class="eq-tradability">Untradable</p>
+		</div>
 		<div class="eq-img-body">
 			<div class="row">
 				<div class="col-sm eq-img-container">
@@ -227,7 +229,6 @@ use many more. New stat details has to be built.)-->
 					</div>
 					<div class="eq-potential-border">
 						<!-- Border potential -->
-		
 					</div>
 					<div class="eq-flame-dot dot">
 						Blue Dot ()
@@ -238,25 +239,25 @@ use many more. New stat details has to be built.)-->
 				</div>
 				<div class="col-sm eq-dmg-container">
 					<p class="eq-damage-inc-label">ATT INCREASE</p>
-					<p class="eq-damage-inc">103345</p>
+					<p class="eq-damage-inc">+ 103345</p>
 					
-					<div class="row">
-						<span class="eq-req-level-label">() REQ LVL: 130</span>
+					<div class="row mb-1">
+						<p class="eq-req-level-label"><i class="icon-ms-square"></i> REQ LVL: 130</p>
 					</div>			
 					<div class="row">
 						<div class="col-sm">
-							<p class="eq-req-strength-label">() REQ STR: 200</p>
+							<p class="eq-req-strength-label"><i class="icon-ms-square"></i> REQ STR: 200</p>
 						</div>
 						<div class="col-sm">
-							<p class="eq-req-luk-label">() REQ LUK: 400</p>
+							<p class="eq-req-luk-label"><i class="icon-ms-square"></i> REQ LUK: 400</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-sm">			
-							<p class="eq-req-dex-label">() REQ DEX: 200</p>
+							<p class="eq-req-dex-label"><i class="icon-ms-square"></i> REQ DEX: 200</p>
 						</div>			
 						<div class="col-sm">			
-							<p class="eq-req-int-label">() REQ INT: 000</p>
+							<p class="eq-req-int-label"><i class="icon-ms-square"></i> REQ INT: 000</p>
 						</div>			
 					</div>
 				</div>
