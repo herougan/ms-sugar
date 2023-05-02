@@ -1,6 +1,6 @@
 import { Component, ElementRef, Injectable, OnInit, Renderer2 } from '@angular/core';
 import { convertAniBinaryToCSS } from 'ani-cursor';
-import { EmptyEquipment, Equipment, EquipmentType } from 'src/app/equipment/equipment';
+import { EmptyEquipment, Equipment, EquipmentType, Rarity } from 'src/app/equipment/equipment';
 
 @Component({
   selector: 'app-tableau',
@@ -104,6 +104,8 @@ export class TableauComponent implements OnInit {
     }
   }
 
+  currEquipment: Equipment = EmptyEquipment();  
+
   ngOnInit(): void {
     this.applyCursor(".btn",                "http://localhost:4200/assets/static/cursor/maple_link.ani");
     this.applyCursor('.inventory-mesos',    "http://localhost:4200/assets/static/cursor/aero_working.ani")
@@ -114,6 +116,19 @@ export class TableauComponent implements OnInit {
     
     this.createInventorySlotDivs(/*renderer *//*, elemRef */);
     this.tooltip = document.querySelector('#item-tooltip')!;   
+
+    // Create fake weapon
+    this.currEquipment.name = "Arcane Shade Hammer (+4)";
+    this.currEquipment.rarity = Rarity.Legendary;
+    this.currEquipment.is_unique = true;
+    this.currEquipment.trade_count_left = 0;
+
+    // Calculate stats 
+
+    /* ==== Get equipment ==== */
+    /* ==== Cal stats ==== */
+    
+    /* ==== Update GUI ==== */
   }
 
   //#endregion Defn
@@ -174,6 +189,8 @@ export class TableauComponent implements OnInit {
     }
   }
 
+  //
+
   //#endregion UI Elements
 
   //#region tooltip
@@ -182,9 +199,6 @@ export class TableauComponent implements OnInit {
   tooltip!: HTMLElement;
   tooltip_offsetY: number = 8;
   tooltipActive: boolean = false;
-  //
-  currEquipment: Equipment = EmptyEquipment(); // TODO only rerender if equipment id changes.
-  
 
   hoverDivs() {
 
@@ -238,3 +252,22 @@ export class TableauComponent implements OnInit {
 
   //#endregion
 }
+
+
+//targets:
+// display css properly
+// display data based on curr equipment
+// react-ize
+// let inventory slots hold equipment
+// let equip slots hold equipment
+// drag and drop equipment
+// equipment can only go into the correct slot
+// change curr equipment based on inventory slot // events
+/// cancelled
+// display stats depending on what is equipped
+// implement all functionalities of equipment
+/// creat optimiser
+//... just a fake one at the start...
+// potential calculators
+// starforce calculators
+// JUST START WITH ONE CALCULATOR, DONT DO THE REST.

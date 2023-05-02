@@ -184,7 +184,7 @@ use many more. New stat details has to be built.)-->
 <div class="tooltip-container row" id="item-tooltip" [ngClass]="{'tooltip-active': tooltipActive, 'empty-equipment' : !currEquipment.name }"> <!-- Number pot -->
 	<div class="col-sm tooltip-content mx-2 my-2">
 		<div class="eq-header">
-			<div class="eq-stars row justify-content-center"> <!-- first row (15) -->
+			<div class="eq-stars row justify-content-center pt-3"> <!-- first row (15) -->
 				<i class="icon-ms-star filled"></i>
 				<i class="icon-ms-star filled"></i>
 				<i class="icon-ms-star filled"></i>
@@ -217,24 +217,21 @@ use many more. New stat details has to be built.)-->
 				<i class="icon-ms-star"></i>
 			</div>
 		</div>
-		<div class="eq-name-header mb-5">
-			<p class="eq-name">Arcane Shade Baselard (+4)</p>
-			<p class="eq-rarity">(Legendary Item, Unique)</p>
-			<p class="eq-tradability">Untradable</p>
+		<div class="eq-name-header mb-2">
+			<p class="eq-name">{{currEquipment.name}} <ng-container>(+{{currEquipment.scrollScore.slots}})</ng-container></p>
+			<p class="eq-rarity">({{currEquipment.rarity}} Item{{currEquipment.is_unique ? ", Unique" : ""}})</p>
+			<p class="eq-tradability">{{currEquipment.trade_count_left <= 0 ? "Untradable" : currEquipment.trade_count_left + " trades left"}}</p>
 		</div>
 		<div class="eq-img-body">
 			<div class="row">
-				<div class="col-sm eq-img-container">
+				<div class="col-sm-4 eq-img-container">
 					<div class="eq-img">
 					</div>
 					<div class="eq-potential-border">
 						<!-- Border potential -->
 					</div>
 					<div class="eq-flame-dot dot">
-						Blue Dot ()
-					</div>
-					<div class="eq-season-dot dot">
-						Blue Dot ()
+						<i class="icon-ms-flame grey"></i>
 					</div>
 				</div>
 				<div class="col-sm eq-dmg-container">
@@ -278,23 +275,23 @@ use many more. New stat details has to be built.)-->
 			</div>
 		</div>
 		<div class="eq-class-list row">
-			<div class="col-sm"><p>BEGINNER</p></div>
-			<div class="col-sm"><p>WARRIOR</p></div>
-			<div class="col-sm"><p>MAGICIAN</p></div>
-			<div class="col-sm"><p>BOWMAN</p></div>
-			<div class="col-sm"><p>THIEF</p></div>
-			<div class="col-sm"><P>PIRATE</P></div>
+			<div class="col-sm-2"><p>BEGINNER</p></div>
+			<div class="col-sm-2"><p>WARRIOR</p></div>
+			<div class="col-sm-2"><p>MAGICIAN</p></div>
+			<div class="col-sm-2"><p>BOWMAN</p></div>
+			<div class="col-sm-2"><p>THIEF</p></div>
+			<div class="col-sm-2"><P>PIRATE</P></div>
 		</div>
 		<div class="eq-stat-body">
-			<div class="row"><p class="col-sm eq-stat-str">STR: +12</p>				<p class="col-sm eq-stat-str-bonus">(0 +12)</p></div>
-			<div class="row"><p class="col-sm eq-stat-dex">DEX: +79</p>				<p class="col-sm eq-stat-dex-bonus">(20 +59)</p></div>
-			<div class="row"><p class="col-sm eq-stat-int">INT: +12</p>				<p class="col-sm eq-stat-int-bonus">(35 +53)</p></div>
-			<div class="row"><p class="col-sm eq-stat-luk">LUK: +12</p>				<p class="col-sm eq-stat-luk-bonus">(35 +53)</p></div>
-			<div class="row"><p class="col-sm eq-stat-hp">HP: +12</p>				<p class="col-sm eq-stat-hp-bonus">(35 +53)</p></div>
-			<div class="row"><p class="col-sm eq-stat-mp">MP: +12</p>				<p class="col-sm eq-stat-mp-bonus">(35 +53)</p></div>
-			<div class="row"><p class="col-sm eq-stat-wep">WEAPON ATTACK: +210</p>	<p class="col-sm eq-stat-wep-bonus">(35 +53)</p></div>
-			<div class="row"><p class="col-sm eq-stat-def">WEAPON DEF: +12</p>		<p class="col-sm eq-stat-def-bonus">(35 +53)</p></div>
-			<div class="row"><p class="col-sm eq-stat-acc">ACCURACY: +12</p>		<p class="col-sm eq-stat-acc-bonus">(35 +53)</p></div>
+			<div class="row"><p class="col-sm eq-stat-str">STR: +12</p>				<p class="col-sm eq-stat-bonus eq-stat-str-bonus">(0 +12)</p></div>
+			<div class="row"><p class="col-sm eq-stat-dex">DEX: +79</p>				<p class="col-sm eq-stat-bonus eq-stat-dex-bonus">(20 +59)</p></div>
+			<div class="row"><p class="col-sm eq-stat-int">INT: +12</p>				<p class="col-sm eq-stat-bonus eq-stat-int-bonus">(35 +53)</p></div>
+			<div class="row"><p class="col-sm eq-stat-luk">LUK: +12</p>				<p class="col-sm eq-stat-bonus eq-stat-luk-bonus">(35 +53)</p></div>
+			<div class="row"><p class="col-sm eq-stat-hp">HP: +12</p>				<p class="col-sm eq-stat-bonus eq-stat-hp-bonus">(35 +53)</p></div>
+			<div class="row"><p class="col-sm eq-stat-mp">MP: +12</p>				<p class="col-sm eq-stat-bonus eq-stat-mp-bonus">(35 +53)</p></div>
+			<div class="row"><p class="col-sm eq-stat-wep">WEAPON ATTACK: +210</p>	<p class="col-sm eq-stat-bonus eq-stat-wep-bonus">(35 +53)</p></div>
+			<div class="row"><p class="col-sm eq-stat-def">WEAPON DEF: +12</p>		<p class="col-sm eq-stat-bonus eq-stat-def-bonus">(35 +53)</p></div>
+			<div class="row"><p class="col-sm eq-stat-acc">ACCURACY: +12</p>		<p class="col-sm eq-stat-bonus eq-stat-acc-bonus">(35 +53)</p></div>
 			<div class="row"><p class="col-sm eq-scroll-remaining">NUMBER OF UPGRADES AVAILABLE: +0</p></div>
 			<div class="row"><p class="col-sm eq-hammers-remaining">GOLDEN HAMMERS APPLIED: 2 MAX</p></div>
 			<!-- <p class="eq-enhancements-applied">10 Enhancement Applied</p> -->
@@ -316,7 +313,7 @@ use many more. New stat details has to be built.)-->
 			<p class="eq-soul-charge">100/1000 (ATT+9, Magic ATT:+0)</p>
 			<p class="eq-soul-effect">DEX+24</p>
 		</div>
-		<div class="eq-footer">
+		<div class="eq-footer py-2">
 			<!-- <p class="eq-additional-effect"></p> -->
 			<p class="eq-karma-text">Use the Platinum Scissors of Karma to enable trading...</p>
 			<p class="eq-karma-r">9 Trades left</p>

@@ -6,6 +6,10 @@ export class Equipment {
 
 	name: string;
 	desc: string;
+	rarity: Rarity;
+	is_unique: boolean;
+
+	trade_count_left: number;
 
 	level_req: number;
 
@@ -26,15 +30,23 @@ export class Equipment {
 	source: string;
 	meta: string;
 
+	// Flame score
+	flameScore: FlameScore; // Test
+
 	constructor(
-		name: string = "", desc: string = "",
-		level_req: number = -1,
+		name: string = "", desc: string = "", rarity: Rarity = Rarity.Common,
+		is_unique:boolean = false, level_req: number = -1, trade_count_left: number = 0,
 		strength: number = -1, dexterity: number = -1, intelligence: number = -1, luck: number = -1,
 		patt: number = -1, matt: number = -1,
 		type: EquipmentType = EquipmentType.None, stars: Stars[] = [],
-		source: string = "", meta: string = "") {
+		source: string = "", meta: string = "",
+		// Scores
+		flameScore: FlameScore = EmptyFlameScore()
+		) {
 
 		this.level_req = level_req;
+		this.is_unique = is_unique;
+		this.trade_count_left = trade_count_left;
 
 		this.strength = strength;
 		this.dexterity = dexterity;
@@ -46,6 +58,7 @@ export class Equipment {
 
 		this.name = name;
 		this.desc = desc;
+		this.rarity = rarity;
 		this.type = type;
 		this.stars = stars;
 
@@ -54,6 +67,8 @@ export class Equipment {
 		// meta
 		this.source = source;
 		this.meta = meta;
+
+		this.flameScore = flameScore;
 	}
 
 	/* Flames */
@@ -127,4 +142,15 @@ export enum EquipmentType {
 	Heart,
 	//
 	None,
+}
+
+export enum Rarity {
+	Ancient = "Ancient",
+	Mythic = "Mythic",
+	Legendary = "Legendary",
+	Unique = "Unique",
+	Epic = "Epic",
+	Rare = "Rare",
+	Uncommon = "Uncommon",
+	Common = "Common",
 }
