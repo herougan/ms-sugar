@@ -515,6 +515,9 @@
 	.eq-class-list {
 		p {
 			font-size: 7px;
+			&usable {
+				color: green;
+			}
 		}
 		div {
 		}

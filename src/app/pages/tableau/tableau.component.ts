@@ -1,5 +1,6 @@
 import { Component, ElementRef, Injectable, OnInit, Renderer2 } from '@angular/core';
 import { convertAniBinaryToCSS } from 'ani-cursor';
+import { Class } from 'src/app/character/class';
 import { EmptyEquipment, Equipment, EquipmentType, Rarity } from 'src/app/equipment/equipment';
 
 @Component({
@@ -121,7 +122,7 @@ export class TableauComponent implements OnInit {
     this.currEquipment.name = "Arcane Shade Hammer (+4)";
     this.currEquipment.rarity = Rarity.Legendary;
     this.currEquipment.is_unique = true;
-    this.currEquipment.trade_count_left = 0;
+    this.currEquipment.trade_count_left = 1; // next is adjusting the stars TODO
 
     // Calculate stats 
 
@@ -248,6 +249,18 @@ export class TableauComponent implements OnInit {
   willDrag(event: any): void {
     // event.target.style.cursor = "url(../../../assets/static/cursor/maple_move.cur)";
     // event.target.style.cursor = 'moving';
+  }
+
+  //#endregion
+
+  //#region
+
+  compareClass(class_string: String, target_class: Class[]): boolean {
+    target_class.forEach(_class => {
+      if (class_string.toUpperCase() == _class.toUpperCase())
+        return true;
+    });
+    return false;
   }
 
   //#endregion

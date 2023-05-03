@@ -239,22 +239,22 @@ use many more. New stat details has to be built.)-->
 					<p class="eq-damage-inc">+ 103345</p>
 					
 					<div class="row mb-1">
-						<p class="eq-req-level-label"><i class="icon-ms-square"></i> REQ LVL: 130</p>
+						<p class="eq-req-level-label"><i class="icon-ms-square"></i> REQ LVL: {{currEquipment.level_req}}</p>
 					</div>			
 					<div class="row">
 						<div class="col-sm">
-							<p class="eq-req-strength-label"><i class="icon-ms-square"></i> REQ STR: 200</p>
+							<p class="eq-req-strength-label"><i class="icon-ms-square"></i> REQ STR: {{currEquipment.stat_req.strength}}</p>
 						</div>
 						<div class="col-sm">
-							<p class="eq-req-luk-label"><i class="icon-ms-square"></i> REQ LUK: 400</p>
+							<p class="eq-req-luk-label"><i class="icon-ms-square"></i> REQ LUK: {{currEquipment.stat_req.luck}}</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-sm">			
-							<p class="eq-req-dex-label"><i class="icon-ms-square"></i> REQ DEX: 200</p>
+							<p class="eq-req-dex-label"><i class="icon-ms-square"></i> REQ DEX: {{currEquipment.stat_req.dexterity}}</p>
 						</div>			
 						<div class="col-sm">			
-							<p class="eq-req-int-label"><i class="icon-ms-square"></i> REQ INT: 000</p>
+							<p class="eq-req-int-label"><i class="icon-ms-square"></i> REQ INT: {{currEquipment.stat_req.intelligence}}</p>
 						</div>			
 					</div>
 				</div>
@@ -275,23 +275,23 @@ use many more. New stat details has to be built.)-->
 			</div>
 		</div>
 		<div class="eq-class-list row">
-			<div class="col-sm-2"><p>BEGINNER</p></div>
-			<div class="col-sm-2"><p>WARRIOR</p></div>
+			<div class="col-sm-2" [ngClass]="{'equippable': compareClass('BEGINNER', currEquipment.class_req)}"><p>BEGINNER</p></div>
+			<div class="col-sm-2"><p>WARRIOR</p></div>(Something aobut ng-classes)
 			<div class="col-sm-2"><p>MAGICIAN</p></div>
 			<div class="col-sm-2"><p>BOWMAN</p></div>
 			<div class="col-sm-2"><p>THIEF</p></div>
 			<div class="col-sm-2"><P>PIRATE</P></div>
 		</div>
 		<div class="eq-stat-body">
-			<div class="row"><p class="col-sm eq-stat-str">STR: +12</p>				<p class="col-sm eq-stat-bonus eq-stat-str-bonus">(0 +12)</p></div>
-			<div class="row"><p class="col-sm eq-stat-dex">DEX: +79</p>				<p class="col-sm eq-stat-bonus eq-stat-dex-bonus">(20 +59)</p></div>
-			<div class="row"><p class="col-sm eq-stat-int">INT: +12</p>				<p class="col-sm eq-stat-bonus eq-stat-int-bonus">(35 +53)</p></div>
-			<div class="row"><p class="col-sm eq-stat-luk">LUK: +12</p>				<p class="col-sm eq-stat-bonus eq-stat-luk-bonus">(35 +53)</p></div>
-			<div class="row"><p class="col-sm eq-stat-hp">HP: +12</p>				<p class="col-sm eq-stat-bonus eq-stat-hp-bonus">(35 +53)</p></div>
-			<div class="row"><p class="col-sm eq-stat-mp">MP: +12</p>				<p class="col-sm eq-stat-bonus eq-stat-mp-bonus">(35 +53)</p></div>
-			<div class="row"><p class="col-sm eq-stat-wep">WEAPON ATTACK: +210</p>	<p class="col-sm eq-stat-bonus eq-stat-wep-bonus">(35 +53)</p></div>
-			<div class="row"><p class="col-sm eq-stat-def">WEAPON DEF: +12</p>		<p class="col-sm eq-stat-bonus eq-stat-def-bonus">(35 +53)</p></div>
-			<div class="row"><p class="col-sm eq-stat-acc">ACCURACY: +12</p>		<p class="col-sm eq-stat-bonus eq-stat-acc-bonus">(35 +53)</p></div>
+			<div class="row"><p class="col-sm eq-stat-str">STR: +{{currEquipment.stat_score.strength}}</p><p class="col-sm eq-stat-bonus eq-stat-str-bonus">(0 +{{currEquipment.flame_score.strength}})</p></div>
+			<div class="row"><p class="col-sm eq-stat-dex">DEX: +{{currEquipment.stat_score.dexterity}}</p>				<p class="col-sm eq-stat-bonus eq-stat-dex-bonus">(20 +{{currEquipment.flame_score.dexterity}})</p></div>
+			<div class="row"><p class="col-sm eq-stat-int">INT: +{{currEquipment.stat_score.intelligence}}</p>				<p class="col-sm eq-stat-bonus eq-stat-int-bonus">(35 +{{currEquipment.flame_score.intelligence}})</p></div>
+			<div class="row"><p class="col-sm eq-stat-luk">LUK: +{{currEquipment.stat_score.luck}}</p>				<p class="col-sm eq-stat-bonus eq-stat-luk-bonus">(35 +{{currEquipment.flame_score.luck}})</p></div>
+			<div class="row"><p class="col-sm eq-stat-hp">HP: +{{currEquipment.stat_score.hp}}</p>				<p class="col-sm eq-stat-bonus eq-stat-hp-bonus">(35 +{{currEquipment.flame_score.hp}})</p></div>
+			<div class="row"><p class="col-sm eq-stat-mp">MP: +{{currEquipment.stat_score.mp}}</p>				<p class="col-sm eq-stat-bonus eq-stat-mp-bonus">(35 +{{currEquipment.flame_score.mp}})</p></div>
+			<div class="row"><p class="col-sm eq-stat-wep">WEAPON ATTACK: +{{currEquipment.stat_score.wep_att}}</p>	<p class="col-sm eq-stat-bonus eq-stat-wep-bonus">(35 +53)</p></div>
+			<div class="row"><p class="col-sm eq-stat-def">WEAPON DEF: +{{currEquipment.stat_score.def}}</p>		<p class="col-sm eq-stat-bonus eq-stat-def-bonus">(35 +53)</p></div>
+			<div class="row"><p class="col-sm eq-stat-acc">ACCURACY: +{{currEquipment.stat_score.acc}}</p>		<p class="col-sm eq-stat-bonus eq-stat-acc-bonus">(35 +53)</p></div>
 			<div class="row"><p class="col-sm eq-scroll-remaining">NUMBER OF UPGRADES AVAILABLE: +0</p></div>
 			<div class="row"><p class="col-sm eq-hammers-remaining">GOLDEN HAMMERS APPLIED: 2 MAX</p></div>
 			<!-- <p class="eq-enhancements-applied">10 Enhancement Applied</p> -->

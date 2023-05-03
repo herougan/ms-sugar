@@ -1,6 +1,10 @@
+import { Class } from "../character/class";
 import { EmptyFlameScore, FlameScore } from "./flame_score";
+import { EmptyBonusPotentialScore, EmptyPotentialScore, PotentialScore } from "./potential_score";
 import { EmptyScroll, ScrollScore } from "./scroll_score";
+import { EmptySetBonusScore, SetBonusScore } from "./setbonus_score";
 import { EmptyStarforceScore, StarforceScore } from "./starforce_score";
+import { EmptyStatScore, StatScore } from "./stat_score";
 
 export class Equipment {
 
@@ -11,50 +15,47 @@ export class Equipment {
 
 	trade_count_left: number;
 
+	stat_req: StatScore;
 	level_req: number;
+	class_req: Class[];
 
-	health: number = 0;
-	mana: number = 0;
-	strength: number;
-	dexterity: number;
-	intelligence: number;
-	luck: number;
-
-	patt: number;
-	matt: number;
+	// Special stats
 
 	type: EquipmentType;
 	stars: Stars[];
 
-	// meta
+	// Meta
 	source: string;
 	meta: string;
 
-	// Flame score
-	flameScore: FlameScore; // Test
+	// Scores
+	starforce_score: StarforceScore;
+	flame_score: FlameScore; // Test
+	stat_score: StatScore;
+	setbonus_score: SetBonusScore;
+	potential_score: PotentialScore;
+	bonus_potential_score: PotentialScore;
 
 	constructor(
-		name: string = "", desc: string = "", rarity: Rarity = Rarity.Common,
-		is_unique:boolean = false, level_req: number = -1, trade_count_left: number = 0,
-		strength: number = -1, dexterity: number = -1, intelligence: number = -1, luck: number = -1,
-		patt: number = -1, matt: number = -1,
+		name: string = "Default", desc: string = "Empty Description", rarity: Rarity = Rarity.Common,
+		is_unique:boolean = false, class_req: Class[] = [Class.Beginner], stat_req: StatScore = EmptyStatScore(), level_req: number = -1, trade_count_left: number = 0,
 		type: EquipmentType = EquipmentType.None, stars: Stars[] = [],
 		source: string = "", meta: string = "",
 		// Scores
-		flameScore: FlameScore = EmptyFlameScore()
+		starforce_score: StarforceScore = EmptyStarforceScore(),
+		stat_score: StatScore = EmptyStatScore(),
+		flame_score: FlameScore = EmptyFlameScore(),
+		setbonus_score: SetBonusScore = EmptySetBonusScore(),
+		// Potential
+		potential_score: PotentialScore = EmptyPotentialScore(),
+		bonus_potential_score: PotentialScore = EmptyBonusPotentialScore(),
 		) {
 
+		this.class_req = class_req;
+		this.stat_req = stat_req;
 		this.level_req = level_req;
 		this.is_unique = is_unique;
 		this.trade_count_left = trade_count_left;
-
-		this.strength = strength;
-		this.dexterity = dexterity;
-		this.intelligence = intelligence;
-		this.luck = luck;
-
-		this.patt = patt;
-		this.matt = matt;
 
 		this.name = name;
 		this.desc = desc;
@@ -68,7 +69,13 @@ export class Equipment {
 		this.source = source;
 		this.meta = meta;
 
-		this.flameScore = flameScore;
+		this.starforce_score = starforce_score;
+		this.flame_score = flame_score;
+		this.stat_score = stat_score;
+		this.setbonus_score = setbonus_score;
+
+		this.potential_score = potential_score;
+		this.bonus_potential_score = bonus_potential_score;
 	}
 
 	/* Flames */

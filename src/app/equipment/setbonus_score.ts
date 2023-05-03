@@ -1,5 +1,11 @@
 export class SetBonusScore {
+	set: Set;
 
+	constructor(
+		set: Set = Set.None
+	) {
+		this.set = set;
+	}
 }
 
 export function EmptySetBonusScore(): SetBonusScore {
@@ -17,7 +23,13 @@ export function RandomSetBonusScore(): SetBonusScore {
 
 /* Set Bonuses */
 
-const PITCHED = 0;
-const BOSS = 0;
-const ETHEREAL = 0;
-const DAWN = 0;
+enum Set {
+	None = "None",
+	Pitched = "Pitched",
+	Boss = "Boss",
+	Dawn = "Dawn",
+	Ethereal = "Ethereal",
+	ArcaneUmbra = "Arcane Umbra",
+	AbsoLabs = "AbsoLabs",
+	ChaosRootAbyss = "Chaos Root Abyss",
+}
